@@ -51,10 +51,16 @@ def apply_perceptron(learn1, learn2, exam1, exam2, data):
   print(count)
   print(w)
   test_count = 0
+  predicted = []
   for x,y in zip(X_test,y_test):
+    if multiply(x,w) > 0:
+      predicted.append(1)
+    else:
+      predicted.append(-1)
     if multiply(x,w)*y < 0:
       test_count += 1
   print(1-test_count/len(y_test))
+  print(confusion_matrix(y_test,predicted))
 
 
 def main():

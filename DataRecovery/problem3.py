@@ -37,6 +37,7 @@ def apply_potentials(learn1, learn2, exam1, exam2, data, a):
     predicted.append(classify(x,a,X_train,y_train,class1,class2))
   predicted = np.array(predicted)
   print(sum(predicted == y_test)/len(y_test))
+  print(confusion_matrix(y_test,predicted))
   
     
     
